@@ -72,7 +72,7 @@ namespace gr {
       while(d_index<d_offset_size)
       {
         
-        if ((d_offset[d_index] > nwritten) && (d_offset[d_index] < (nwritten+noutput)))
+        if ((d_offset[d_index] >= nwritten) && (d_offset[d_index] < (nwritten+noutput)))
         {         
           if (d_debug) std::cout<<"Added tag at offset: "<<d_offset[d_index]<<std::endl;
           
