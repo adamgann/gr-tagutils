@@ -34,7 +34,6 @@ list(APPEND tagutils_sources
     tag_to_byte_c_impl.cc
     tag_to_byte_f_impl.cc
     tag_to_byte_b_impl.cc
-    add_tag_at_offset_impl.cc
     tag_extract_cc_impl.cc
 )
 

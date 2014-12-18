@@ -12,7 +12,6 @@
 #include "tagutils/tag_to_byte_c.h"
 #include "tagutils/tag_to_byte_f.h"
 #include "tagutils/tag_to_byte_b.h"
-#include "tagutils/add_tag_at_offset.h"
 #include "tagutils/tag_extract_cc.h"
 
 #include "tagutils/tag_at_offset_ss.h"
@@ -33,8 +32,7 @@ GR_SWIG_BLOCK_MAGIC2(tagutils, tag_to_byte_c);
 GR_SWIG_BLOCK_MAGIC2(tagutils, tag_to_byte_f);
 %include "tagutils/tag_to_byte_b.h"
 GR_SWIG_BLOCK_MAGIC2(tagutils, tag_to_byte_b);
-%include "tagutils/add_tag_at_offset.h"
-GR_SWIG_BLOCK_MAGIC2(tagutils, add_tag_at_offset);
+
 %include "tagutils/tag_extract_cc.h"
 GR_SWIG_BLOCK_MAGIC2(tagutils, tag_extract_cc);
 

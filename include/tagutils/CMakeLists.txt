@@ -26,8 +26,6 @@ GR_EXPAND_X_H(tagutils tag_at_offset_XX             ss ii ff cc bb)
 add_custom_target(tagutils_generated_includes DEPENDS
     ${generated_includes}
 )
-
-
 install(FILES
     api.h
     ${generated_sources}
@@ -35,6 +33,5 @@ install(FILES
     tag_to_byte_c.h
     tag_to_byte_f.h
     tag_to_byte_b.h
-    add_tag_at_offset.h
     tag_extract_cc.h DESTINATION include/tagutils
 )
