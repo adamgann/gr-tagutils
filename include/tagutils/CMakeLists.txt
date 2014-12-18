@@ -31,8 +31,5 @@ install(FILES
     api.h
     ${generated_sources}
     tag_thresh_switch.h
-    tag_to_byte_c.h
-    tag_to_byte_f.h
-    tag_to_byte_b.h
     tag_extract_cc.h DESTINATION include/tagutils
 )

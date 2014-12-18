@@ -31,9 +31,6 @@ link_directories(${Boost_LIBRARY_DIRS})
 list(APPEND tagutils_sources
     ${generated_sources}
     tag_thresh_switch_impl.cc
-    tag_to_byte_c_impl.cc
-    tag_to_byte_f_impl.cc
-    tag_to_byte_b_impl.cc
     tag_extract_cc_impl.cc
 )
 
