@@ -20,11 +20,16 @@
 ########################################################################
 # Setup library
 ########################################################################
+include(GrMiscUtils)
+GR_EXPAND_X_CC_H_IMPL(tagutils tag_at_offset_XX   ss ii ff cc bb)
+
+
 include(GrPlatform) #define LIB_SUFFIX
 
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 list(APPEND tagutils_sources
+    ${generated_sources}
     tag_thresh_switch_impl.cc
     tag_to_byte_c_impl.cc
     tag_to_byte_f_impl.cc
@@ -34,6 +39,7 @@ list(APPEND tagutils_sources
 )
 
 add_library(gnuradio-tagutils SHARED ${tagutils_sources})
+add_dependencies(gnuradio-tagutils tagutils_generated_includes tagutils_generated_swigs)
 target_link_libraries(gnuradio-tagutils ${Boost_LIBRARIES} ${GNURADIO_RUNTIME_LIBRARIES})
 set_target_properties(gnuradio-tagutils PROPERTIES DEFINE_SYMBOL "gnuradio_tagutils_EXPORTS")
 

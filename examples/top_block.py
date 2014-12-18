@@ -2,7 +2,7 @@
 ##################################################
 # Gnuradio Python Flow Graph
 # Title: Top Block
-# Generated: Tue Nov  4 20:48:19 2014
+# Generated: Wed Dec 17 21:46:45 2014
 ##################################################
 
 from gnuradio import analog
@@ -31,20 +31,19 @@ class top_block(grc_wxgui.top_block_gui):
         ##################################################
         # Blocks
         ##################################################
-        self.tagutils_add_tag_at_offset_0 = tagutils.add_tag_at_offset("test_tag", [8765,8769,100000], 35, False)
-        self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate)
-        self.blocks_tag_debug_0 = blocks.tag_debug(gr.sizeof_gr_complex*1, "", ""); self.blocks_tag_debug_0.set_display(True)
-        self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, 1000, 1, 0)
+        self.tagutils_tag_at_offset_xx_0 = tagutils.tag_at_offset_ff("test_tag", [8675,8940,100000], 35, False)
+        self.blocks_throttle_0 = blocks.throttle(gr.sizeof_float*1, samp_rate,True)
+        self.blocks_tag_debug_0 = blocks.tag_debug(gr.sizeof_float*1, "", ""); self.blocks_tag_debug_0.set_display(True)
+        self.analog_sig_source_x_0 = analog.sig_source_f(samp_rate, analog.GR_COS_WAVE, 1000, 1, 0)
 
         ##################################################
         # Connections
         ##################################################
         self.connect((self.analog_sig_source_x_0, 0), (self.blocks_throttle_0, 0))
-        self.connect((self.blocks_throttle_0, 0), (self.tagutils_add_tag_at_offset_0, 0))
-        self.connect((self.tagutils_add_tag_at_offset_0, 0), (self.blocks_tag_debug_0, 0))
+        self.connect((self.blocks_throttle_0, 0), (self.tagutils_tag_at_offset_xx_0, 0))
+        self.connect((self.tagutils_tag_at_offset_xx_0, 0), (self.blocks_tag_debug_0, 0))
 
 
-# QT sink close method reimplementation
 
     def get_samp_rate(self):
         return self.samp_rate
@@ -56,8 +55,8 @@ class top_block(grc_wxgui.top_block_gui):
 
 if __name__ == '__main__':
     import ctypes
-    import os
-    if os.name == 'posix':
+    import sys
+    if sys.platform.startswith('linux'):
         try:
             x11 = ctypes.cdll.LoadLibrary('libX11.so')
             x11.XInitThreads()
@@ -68,4 +67,3 @@ if __name__ == '__main__':
     tb = top_block()
     tb.Start(True)
     tb.Wait()
-

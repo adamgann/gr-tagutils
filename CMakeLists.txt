@@ -80,6 +80,8 @@ set(GR_LIBEXEC_DIR      libexec)
 set(GR_PKG_LIBEXEC_DIR  ${GR_LIBEXEC_DIR}/${CMAKE_PROJECT_NAME})
 set(GRC_BLOCKS_DIR      ${GR_PKG_DATA_DIR}/grc/blocks)
 
+set(GR_RUNTIME_PYTHONPATH ${CMAKE_SOURCE_DIR}/python)
+
 ########################################################################
 # Find gnuradio build dependencies
 ########################################################################

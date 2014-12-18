@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<block>
+  <name>Add Tag at Offset</name>
+  <key>tagutils_tag_at_offset_xx</key>
+  <category>Tag Utils</category>
+  <import>import tagutils</import>
+  <make>tagutils.tag_at_offset_$(type.fcn)($tag_key, $tag_offset, $tag_val, $debug)</make>
+
+  <param>
+    <name>Name</name>
+    <key>tag_key</key>
+    <type>string</type>
+  </param>
+
+  <param>
+    <name>Offset</name>
+    <key>tag_offset</key>
+    <value>[0]</value>
+    <type>raw</type>
+  </param>
+
+  <param>
+    <name>Value</name>
+    <key>tag_val</key>
+    <value>0</value>
+    <type>int</type>
+  </param>
+
+	<param>
+		<name>IO Type</name>
+		<key>type</key>
+		<type>enum</type>
+		<option>
+			<name>Complex</name>
+			<key>complex</key>
+			<opt>fcn:cc</opt>
+		</option>
+		<option>
+			<name>Float</name>
+			<key>float</key>
+			<opt>fcn:ff</opt>
+		</option>
+		<option>
+			<name>Int</name>
+			<key>int</key>
+			<opt>fcn:ii</opt>
+		</option>
+		<option>
+			<name>Short</name>
+			<key>short</key>
+			<opt>fcn:ss</opt>
+		</option>
+		<option>
+			<name>Byte</name>
+			<key>byte</key>
+			<opt>fcn:bb</opt>
+		</option>
+	</param>
+
+
+  <param>
+    <name>Debug</name>
+    <key>debug</key>
+    <value>False</value>
+    <type>bool</type>
+      <option>
+        <name>On</name>
+        <key>True</key>
+      </option>
+      <option>
+        <name>Off</name>
+        <key>False</key>
+      </option>
+  </param>      
+     
+
+  <sink>
+    <name>in</name>
+    <type>$type</type>
+  </sink>
+
+
+  <source>
+    <name>out</name>
+    <type>$type</type>
+  </source>
+</block>

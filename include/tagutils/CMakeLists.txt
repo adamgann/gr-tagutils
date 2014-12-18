@@ -20,8 +20,17 @@
 ########################################################################
 # Install public header files
 ########################################################################
+include(GrMiscUtils)
+GR_EXPAND_X_H(tagutils tag_at_offset_XX             ss ii ff cc bb)
+
+add_custom_target(tagutils_generated_includes DEPENDS
+    ${generated_includes}
+)
+
+
 install(FILES
     api.h
+    ${generated_sources}
     tag_thresh_switch.h
     tag_to_byte_c.h
     tag_to_byte_f.h
