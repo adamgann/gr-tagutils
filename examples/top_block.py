@@ -2,7 +2,7 @@
 ##################################################
 # Gnuradio Python Flow Graph
 # Title: Top Block
-# Generated: Thu Dec 18 13:38:47 2014
+# Generated: Thu Dec 18 13:46:28 2014
 ##################################################
 
 from gnuradio import blocks
@@ -40,9 +40,9 @@ class top_block(grc_wxgui.top_block_gui):
         self.digital_chunks_to_symbols_xx_0 = digital.chunks_to_symbols_bc(([-1,1]), 1)
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_char*1, samp_rate,True)
         self.blocks_pdu_to_tagged_stream_1 = blocks.pdu_to_tagged_stream(blocks.byte_t, packet_len_tag)
-        self.blocks_file_sink_1 = blocks.file_sink(gr.sizeof_char*1, "/home/adam/src/gr-tagutils/examples/data/tag.dat", False)
+        self.blocks_file_sink_1 = blocks.file_sink(gr.sizeof_char*1, "/tmp/tag.dat", False)
         self.blocks_file_sink_1.set_unbuffered(True)
-        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_gr_complex*1, "/home/adam/src/gr-tagutils/examples/data/data.dat", False)
+        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_gr_complex*1, "/tmp/data.dat", False)
         self.blocks_file_sink_0.set_unbuffered(True)
 
         ##################################################
