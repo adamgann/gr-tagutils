@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<block>
+  <name>Tag Extractor</name>
+  <key>tagutils_tag_extract_cc</key>
+  <category>Tag Utils</category>
+  <import>import tagutils</import>
+  <make>tagutils.tag_extract_cc($tag_key,$debug)</make>
+  
+  <param>
+    <name>Stream Type</name>
+    <key>stream_type</key>
+    <value>complex</value>
+    <type>enum</type>
+      <option>
+        <name>Complex</name>
+        <key>complex</key>
+        <opt>sink_type:complex</opt>
+      </option>
+  </param>
+  
+  <param>
+    <name>Tag Type</name>
+    <key>tag_type</key>
+    <value>complex</value>
+    <type>enum</type>
+      <option>
+        <name>Complex</name>
+        <key>complex</key>
+        <opt>source_type:complex</opt>
+      </option>
+  </param>
+ 
+ 
+  <param>
+    <name>Tag Key</name>
+    <key>tag_key</key>
+    <type>string</type>
+  </param>
+        
+  <param>
+    <name>Debug</name>
+    <key>debug</key>
+    <value>False</value>
+    <type>bool</type>
+      <option>
+        <name>On</name>
+        <key>True</key>
+      </option>
+      <option>
+        <name>Off</name>
+        <key>False</key>
+      </option>
+  </param>
+  
+  <sink>
+    <name>in</name>
+    <type>$stream_type.sink_type</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>$tag_type.source_type</type>
+  </source>
+  
+</block>

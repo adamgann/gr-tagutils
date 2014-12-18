@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<block>
+  <name>Tag To Byte</name>
+  <key>tagutils_tag_to_byte</key>
+  <category>Tag Utils</category>
+  <import>import tagutils</import>
+  <make>tagutils.tag_to_byte_$(type.file_ext)($tag_key, $debug)</make>
+
+
+  <param>
+    <name>IO Type</name>
+    <key>type</key>
+    <value>c</value>
+    <type>enum</type>
+    <option>
+        <name>Complex</name>
+        <key>complex</key>
+        <opt>file_ext:c</opt>
+        <opt>sink_type:complex</opt>
+    </option>
+    <option>
+      <name>Float</name>
+      <key>float</key>
+      <opt>file_ext:f</opt>
+      <opt>sink_type:float</opt>
+    </option>
+    <option>
+        <name>Byte</name>
+        <key>byte</key>
+        <opt>file_ext:b</opt>
+        <opt>sink_type:byte</opt>
+    </option>
+  </param>
+
+
+  <param>
+	<name>Tag Key</name>
+	<key>tag_key</key>
+	<type>string</type>
+  </param>
+
+	<param>
+		<name>Debug</name>
+		<key>debug</key>
+		<value>False</value>
+		<type>bool</type>
+
+		<option>
+			<name>Enable</name>
+			<key>True</key>
+		</option>
+		<option>
+			<name>Disable</name>
+			<key>False</key>
+		</option>
+	</param>
+
+  <sink>
+    <name>in</name>
+    <type>$type.sink_type</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<block>
+  <name>Tag Threshold Switch</name>
+  <key>tagutils_tag_thresh_switch</key>
+  <category>Tag Utils</category>
+  <import>import tagutils</import>
+  <make>tagutils.tag_thresh_switch($type.size, $filter, $threshold, $debug, $above_if_equal)</make>
+
+  <callback>set_threshold($threshold)</callback>
+
+
+	<param>
+	<name>Stream Type</name>
+	<key>type</key>
+	<type>enum</type>
+	<option>
+		<name>Complex</name>
+		<key>complex</key>
+		<opt>size:gr.sizeof_gr_complex</opt>
+	</option>
+	<option>
+		<name>Float</name>
+		<key>float</key>
+		<opt>size:gr.sizeof_float</opt>
+	</option>
+	<option>
+		<name>Int</name>
+		<key>int</key>
+		<opt>size:gr.sizeof_int</opt>
+	</option>
+	<option>
+		<name>Short</name>
+		<key>short</key>
+		<opt>size:gr.sizeof_short</opt>
+	</option>
+	<option>
+		<name>Byte</name>
+		<key>byte</key>
+		<opt>size:gr.sizeof_char</opt>
+	</option>
+    </param>
+
+	<param>
+		<name>Debug</name>
+		<key>debug</key>
+		<value>False</value>
+		<type>bool</type>
+
+		<option>
+			<name>Enable</name>
+			<key>True</key>
+		</option>
+		<option>
+			<name>Disable</name>
+			<key>False</key>
+		</option>
+	</param>
+
+	<param>
+		<name>If Equal Output At</name>
+		<key>above_if_equal</key>
+		<value>True</value>
+		<type>bool</type>
+
+		<option>
+			<name>Above</name>
+			<key>True</key>
+		</option>
+		<option>
+			<name>Below</name>
+			<key>False</key>
+		</option>
+	</param>
+
+  	<param>
+		<name>Tag</name>
+		<key>filter</key>
+                <value>""</value>
+		<type>string</type>
+	</param>
+
+    <param>
+        <name>Threshold</name>
+        <key>threshold</key>
+        <type>real</type>
+    </param>
+
+
+
+	<sink>
+		<name>in</name>
+		<type>$type</type>
+		<vlen>1</vlen>
+	</sink>
+
+    <source>
+        <name>above</name>
+	    <type>$type</type>
+	    <vlen>1</vlen>
+    </source>
+
+    <source>
+        <name>below</name>
+        <type>$type</type>
+        <vlen>1</vlen>
+    </source>
+
+
+    
+</block>
