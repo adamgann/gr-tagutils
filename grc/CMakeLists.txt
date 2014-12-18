@@ -18,6 +18,7 @@
 # Boston, MA 02110-1301, USA.
 install(FILES
     tagutils_tag_at_offset_XX.xml
+    tagutils_tag_to_byte_xb.xml
     tagutils_tag_thresh_switch.xml
     tagutils_tag_to_byte_x.xml
     tagutils_tag_extract_cc.xml DESTINATION share/gnuradio/grc/blocks

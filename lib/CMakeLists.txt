@@ -22,7 +22,7 @@
 ########################################################################
 include(GrMiscUtils)
 GR_EXPAND_X_CC_H_IMPL(tagutils tag_at_offset_XX   ss ii ff cc bb)
-
+GR_EXPAND_X_CC_H_IMPL(tagutils tag_to_byte_Xb   s i f c b)
 
 include(GrPlatform) #define LIB_SUFFIX
 

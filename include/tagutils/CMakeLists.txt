@@ -22,6 +22,7 @@
 ########################################################################
 include(GrMiscUtils)
 GR_EXPAND_X_H(tagutils tag_at_offset_XX             ss ii ff cc bb)
+GR_EXPAND_X_H(tagutils tag_to_byte_Xb   s i f c b)
 
 add_custom_target(tagutils_generated_includes DEPENDS
     ${generated_includes}
