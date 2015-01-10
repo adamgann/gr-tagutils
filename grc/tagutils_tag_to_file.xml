@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<block>
+  <name>Tag to File</name>
+  <key>tagutils_tag_to_file</key>
+  <category>Tag Utils</category>
+  <import>import tagutils</import>
+  <make>tagutils.tag_to_file($type.size, $tag_key, $file_name)</make>
+
+
+  <param>
+    <name>IO Type</name>
+    <key>type</key>
+    <value>c</value>
+    <type>enum</type>
+    <option>
+        <name>Complex</name>
+        <key>complex</key>
+        <opt>size:8</opt>
+        <opt>sink_type:complex</opt>
+    </option>
+    <option>
+        <name>Float</name>
+        <key>float</key>
+        <opt>size:4</opt>
+        <opt>sink_type:float</opt>
+    </option>
+    <option>
+        <name>Int</name>
+        <key>int</key>
+        <opt>size:4</opt>
+        <opt>sink_type:int</opt>
+    </option>
+    <option>
+        <name>Short</name>
+        <key>short</key>
+        <opt>size:2</opt>
+        <opt>sink_type:short</opt>
+    </option>
+    <option>
+        <name>Byte</name>
+        <key>byte</key>
+        <opt>size:1</opt>
+        <opt>sink_type:byte</opt>
+    </option>
+  </param>
+
+  <param>
+	  <name>Tag Key</name>
+	  <key>tag_key</key>
+	  <type>string</type>
+  </param>
+
+	<param>
+		<name>File</name>
+		<key>file_name</key>
+		<value></value>
+		<type>file_save</type>
+	</param>
+
+
+  <sink>
+    <name>in</name>
+    <type>$type.sink_type</type>
+  </sink>
+
+  
+</block>

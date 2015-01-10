@@ -45,6 +45,7 @@ if _RTLD_GLOBAL != 0:
 from tagutils_swig import *
 
 # import any pure python here
+from tag_to_file import tag_to_file
 #
 
 # ----------------------------------------------------------------

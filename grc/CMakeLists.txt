@@ -20,6 +20,6 @@ install(FILES
     tagutils_tag_at_offset_XX.xml
     tagutils_tag_to_byte_xb.xml
     tagutils_tag_thresh_switch.xml
-    tagutils_tag_to_byte_x.xml
-    tagutils_tag_extract_cc.xml DESTINATION share/gnuradio/grc/blocks
+    tagutils_tag_extract_cc.xml
+    tagutils_tag_to_file.xml DESTINATION share/gnuradio/grc/blocks
 )
