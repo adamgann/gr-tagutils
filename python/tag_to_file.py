@@ -46,8 +46,12 @@ class tag_to_file(gr.hier_block2):
           self.tag_to_byte = tagutils.tag_to_byte_fb(tag_key,False)
         elif (data_size == gr.sizeof_char):
           self.tag_to_byte = tagutils.tag_to_byte_bb(tag_key,False)
+        elif (data_size == gr.sizeof_int):
+          self.tag_to_byte = tagutils.tag_to_byte_ib(tag_key,False)
+        elif (data_size == gr.sizeof_short):
+          self.tag_to_byte = tagutils.tag_to_byte_sb(tag_key,False)
         else:
-          print "Can't do that Jim"
+          print "Invalid Data Type. I don't know how you got here, honestly."
 
 
         # Define blocks and connect them

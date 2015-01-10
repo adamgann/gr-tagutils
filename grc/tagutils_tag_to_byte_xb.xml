@@ -25,6 +25,18 @@
       <opt>sink_type:float</opt>
     </option>
     <option>
+        <name>Int</name>
+        <key>int</key>
+        <opt>file_ext:i</opt>
+        <opt>sink_type:int</opt>
+    </option>
+    <option>
+        <name>Short</name>
+        <key>short</key>
+        <opt>file_ext:s</opt>
+        <opt>sink_type:short</opt>
+    </option>
+    <option>
         <name>Byte</name>
         <key>byte</key>
         <opt>file_ext:b</opt>
