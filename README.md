@@ -1,10 +1,10 @@
-#Introduction
+# Introduction
 
 The files in gr-tagutils are useful for experimenting with Stream Tags in 
 GNU Radio (ver 3.7 or later).
 
 
-#Installation
+# Installation
 
 Naviagate to your desired install directory. This should be outside of the main
 GNU Radio source code directory. From the terminal: 
@@ -20,9 +20,9 @@ GNU Radio source code directory. From the terminal:
 
 
 
-#Blocks
+# Blocks
 
-###Tag Threshold Switch
+### Tag Threshold Switch
 
 Searches for a stream tag matching the key parameter and gets its value.
 If the value is above the threshold, copies the input to the 'above' port
