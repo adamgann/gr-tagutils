@@ -36,7 +36,7 @@ list(APPEND tagutils_sources
 
 add_library(gnuradio-tagutils SHARED ${tagutils_sources})
 add_dependencies(gnuradio-tagutils tagutils_generated_includes tagutils_generated_swigs)
-target_link_libraries(gnuradio-tagutils ${Boost_LIBRARIES} ${GNURADIO_RUNTIME_LIBRARIES})
+target_link_libraries(gnuradio-tagutils ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
 set_target_properties(gnuradio-tagutils PROPERTIES DEFINE_SYMBOL "gnuradio_tagutils_EXPORTS")
 
 ########################################################################
